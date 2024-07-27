@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Image Generator</title>
+    <!-- Use url_for to ensure Flask correctly finds the static files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Text-to-Image Generator</h1>
+        <input type="text" id="prompt" placeholder="Enter your prompt here">
+        <button onclick="generateImage()">Generate Image</button>
+        <div id="image-container">
+            <canvas id="imageCanvas"></canvas>
+        </div>
+    </div>
+    <!-- Ensure script.js is correctly referenced -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
